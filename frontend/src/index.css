@@ -1,0 +1,425 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
+  background: linear-gradient(135deg, #1D1E2C 80%, #59656F 100%);
+  color: #FFFFFF;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Page layout */
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-header {
+  display: flex;
+  justify-content: center;
+  padding: 15px 30px;
+  background-color: #1D1E2C;
+  border-bottom: 1px solid #89BBFE;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-logo {
+  width: 50px;
+  height: auto;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.uni-name {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #89BBFE;
+  text-transform: lowercase;
+}
+
+.site-title {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
+  font-size: 0.9rem;
+  color: #CAE5FF;
+  text-transform: lowercase;
+}
+
+.page-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.page-footer {
+  padding: 15px 30px;
+  background-color: #1D1E2C;
+  border-top: 1px solid #59656F;
+  text-align: center;
+}
+
+.footer-text {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
+  font-size: 0.9rem;
+  color: #CAE5FF;
+}
+
+.footer-link {
+  color: #89BBFE;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer-link:hover {
+  color: #CAE5FF;
+  text-decoration: underline;
+}
+
+/* Home styles */
+.home-container {
+  width: 100%;
+  max-width: 600px;
+  padding: 40px;
+  background-color: #2D2E3C;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.home-text {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
+  font-size: 1.1rem;
+  color: #CAE5FF;
+  margin-bottom: 30px;
+}
+
+.home-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.home-button {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #89BBFE;
+  color: #1D1E2C;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.home-button:hover {
+  background-color: #59656F;
+  transform: scale(1.05);
+}
+
+.home-button:active {
+  transform: scale(0.95);
+}
+
+/* Login styles */
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #2D2E3C;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.login-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #CAE5FF;
+  margin-bottom: 20px;
+}
+
+.login-error {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
+  font-size: 1rem;
+  color: #FF4D4F;
+  margin-bottom: 15px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-input {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
+  font-size: 1rem;
+  padding: 12px;
+  border: 1px solid #59656F;
+  border-radius: 8px;
+  background-color: #1D1E2C;
+  color: #CAE5FF;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.login-input:focus {
+  border-color: #89BBFE;
+}
+
+.login-submit-btn {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #89BBFE;
+  color: #1D1E2C;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.login-submit-btn:hover {
+  background-color: #59656F;
+  transform: scale(1.05);
+}
+
+.login-submit-btn:active {
+  transform: scale(0.95);
+}
+
+.login-text {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
+  font-size: 0.9rem;
+  color: #CAE5FF;
+  margin-top: 20px;
+}
+
+.login-text a {
+  color: #89BBFE;
+  text-decoration: none;
+}
+
+.login-text a:hover {
+  text-decoration: underline;
+}
+
+/* Signup styles */
+.signup-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #2D2E3C;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.signup-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #CAE5FF;
+  margin-bottom: 20px;
+}
+
+.signup-error {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
+  font-size: 1rem;
+  color: #FF4D4F;
+  margin-bottom: 15px;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.signup-input {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
+  font-size: 1rem;
+  padding: 12px;
+  border: 1px solid #59656F;
+  border-radius: 8px;
+  background-color: #1D1E2C;
+  color: #CAE5FF;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.signup-input:focus {
+  border-color: #89BBFE;
+}
+
+.signup-submit-btn {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #89BBFE;
+  color: #1D1E2C;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.signup-submit-btn:hover {
+  background-color: #59656F;
+  transform: scale(1.05);
+}
+
+.signup-submit-btn:active {
+  transform: scale(0.95);
+}
+
+.signup-text {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
+  font-size: 0.9rem;
+  color: #CAE5FF;
+  margin-top: 20px;
+}
+
+.signup-text a {
+  color: #89BBFE;
+  text-decoration: none;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
+
+/* Dashboard styles */
+.dashboard-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #2D2E3C;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.dashboard-container:hover {
+  transform: translateY(-2px);
+}
+
+.dashboard-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #CAE5FF;
+  margin-bottom: 20px;
+}
+
+.dashboard-text {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
+  font-size: 1.2rem;
+  color: #CAE5FF;
+  margin: 12px 0;
+}
+
+.dashboard-logout-btn {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #89BBFE;
+  color: #1D1E2C;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.dashboard-logout-btn:hover {
+  background-color: #59656F;
+  transform: scale(1.05);
+}
+
+.dashboard-logout-btn:active {
+  transform: scale(0.95);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .page-header {
+    padding: 10px 20px;
+  }
+
+  .header-logo {
+    width: 40px;
+  }
+
+  .uni-name {
+    font-size: 1rem;
+  }
+
+  .site-title {
+    font-size: 0.8rem;
+  }
+
+  .home-container, .login-container, .signup-container, .dashboard-container {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  .home-title, .dashboard-title, .login-title, .signup-title {
+    font-size: 1.8rem;
+  }
+
+  .home-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .home-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-footer {
+    padding: 10px 20px;
+  }
+
+  .footer-text {
+    font-size: 0.8rem;
+  }
+
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header-logo {
+    margin-bottom: 5px;
+  }
+}
