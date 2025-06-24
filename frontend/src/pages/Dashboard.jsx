@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import '../dashboard.css'; // New CSS file
+import '../styles/dashboard.css'; // New CSS file
 import { FaBook } from 'react-icons/fa';
 import { FaChalkboardTeacher } from 'react-icons/fa';
 import { FaUserCheck } from 'react-icons/fa';
+import { CgProfile } from "react-icons/cg";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -11,8 +12,8 @@ const Dashboard = () => {
   return (
     <div className="dashboard-container">
       <header className="dashboard-header">
-        <img src="/logo.png" alt="uni logo" className="header-logo" />
-        <img src="/profile.png" alt="profile" className="profile-icon" onClick={() => navigate('/profile')} />
+        <img src="RegEaseLogo.png" alt="uni logo" className="header-logo" />
+        <CgProfile className='profile-icon' onClick={() => navigate('/profile')}/>
       </header>
       <div className="dashboard-main">
         <nav className="dashboard-sidenav">

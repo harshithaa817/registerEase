@@ -10,7 +10,7 @@ const Login = () => {
   return (
     <div className="page-container">
       <header className="page-header">
-        <img src="/logo.png" alt="uni logo" className="header-logo" />
+        <img src="/RegEaseLogo.png" alt="uni logo" className="header-logo" />
       </header>
       <main className="page-content">
         <div className="login-container">
