@@ -6,23 +6,19 @@ const Home = () => {
   return (
     <div className="page-container">
       <header className="page-header">
-        <div className="header-content">
-          <img src="/logo.png" alt="uni logo" className="header-logo" />
-          <div className="header-text">
-          </div>
-        </div>
+        <img src="/logo.png" alt="uni logo" className="header-logo" />
       </header>
       <main className="page-content">
         <div className="home-container">
           <p className="home-text">Access your courses and lectures with ease.</p>
           <div className="home-buttons">
-            <Link to="/login" className="home-button">login</Link>
-            <Link to="/signup" className="home-button">sign up</Link>
+            <Link to="/login" className="home-button">Login</Link>
+            <Link to="/signup" className="home-button">Sign up</Link>
           </div>
         </div>
       </main>
       <footer className="page-footer">
-        <p className="footer-text">© 2025 university registration | <a href="/terms" className="footer-link">terms</a> | <a href="/privacy" className="footer-link">privacy</a></p>
+        <p className="footer-text">© 2025 University Registration | <a href="/terms" className="footer-link">Terms</a> | <a href="/privacy" className="footer-link">Privacy</a></p>
       </footer>
     </div>
   );

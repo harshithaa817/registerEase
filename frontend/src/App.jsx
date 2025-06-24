@@ -1,34 +1,40 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
-import { supabase } from './services/supabase';
+import { BrowserRouter as Router, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
-import './index.css';
 
-const RedirectIfAuthenticated = () => {
+const Callback = () => {
+  const location = useLocation();
   const navigate = useNavigate();
 
   useEffect(() => {
-    const checkUser = async () => {
-      const { data: { user } } = await supabase.auth.getUser();
-      if (user) navigate('/dashboard');
-    };
-    checkUser();
-  }, [navigate]);
+    const searchParams = new URLSearchParams(location.search);
+    const token = searchParams.get('token');
+    if (token) {
+      console.log('Token received in callback:', token);
+      // Store token in localStorage or context (e.g., for authenticated requests)
+      localStorage.setItem('authToken', token);
+      navigate('/dashboard');
+    } else {
+      console.error('No token in callback URL');
+      navigate('/login'); // Redirect to login on failure
+    }
+  }, [location, navigate]);
 
-  return null;
+  return <div>Loading...</div>; // Placeholder while redirecting
 };
 
 const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<><RedirectIfAuthenticated /><Home /></>} />
-        <Route path="/login" element={<><RedirectIfAuthenticated /><Login /></>} />
-        <Route path="/signup" element={<><RedirectIfAuthenticated /><Signup /></>} />
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/auth/callback" element={<Callback />} />
       </Routes>
     </Router>
   );

@@ -1,25 +1,27 @@
 const express = require('express');
 const cors = require('cors');
-const dotenv = require('dotenv');
 const authRoutes = require('./routes/authRoutes');
-const userRoutes = require('./routes/userRoutes');
 
-dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors({
-  origin: 'http://localhost:3000',
-  credentials: true,
-}));
 app.use(express.json());
+app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
 
-// Routes
-app.use('/api/auth', authRoutes);
-app.use('/api', userRoutes);
+console.log('Middleware initialized:', {
+  json: true,
+  cors: 'http://localhost:3000 with credentials'
+});
 
-// Start server
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+// Mount auth routes
+app.use('/auth', authRoutes);
+
+app.listen(5000, () => {
+  console.log('Server running on port 5000');
+  console.log('Available routes:', {
+    googleAuth: 'http://localhost:5000/auth/google',
+    callback: 'http://localhost:5000/auth/callback',
+    logout: 'http://localhost:5000/auth/logout',
+    user: 'http://localhost:5000/auth/user'
+  });
 });

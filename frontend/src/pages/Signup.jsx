@@ -1,59 +1,28 @@
-import React, { useState } from 'react';
-import { supabase } from '../services/supabase';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import '../index.css';
 
 const Signup = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const navigate = useNavigate();
-
-  const handleSignup = async (e) => {
-    e.preventDefault();
-    try {
-      const { data, error } = await supabase.auth.signUp({
-        email,
-        password,
-      });
-      if (error) throw error;
-      navigate('/dashboard');
-    } catch (err) {
-      setError(err.message);
-    }
+  const handleGoogleSignup = () => {
+    window.location.href = 'http://localhost:5000/auth/google';
   };
 
   return (
     <div className="page-container">
       <header className="page-header">
-        <div className="logo">RegisterEase</div>
+        <img src="/logo.png" alt="uni logo" className="header-logo" />
       </header>
       <main className="page-content">
         <div className="signup-container">
-          <h2 className="signup-title">Sign Up</h2>
-          {error && <p className="signup-error">{error}</p>}
-          <form className="signup-form" onSubmit={handleSignup}>
-            <input
-              type="email"
-              className="signup-input"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-              type="password"
-              className="signup-input"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <button type="submit" className="signup-submit-btn">
-              Sign Up
-            </button>
+          <h1 className="signup-title">Sign Up</h1>
+          <form className="signup-form">
+            <input type="text" className="signup-input" placeholder="Full Name" />
+            <input type="email" className="signup-input" placeholder="Email" />
+            <input type="password" className="signup-input" placeholder="Password" />
+            <button type="submit" className="signup-submit-btn">Sign Up</button>
           </form>
-          <p className="signup-text">
-            Already have an account? <a href="/login">Login</a>
-          </p>
+          <p className="login-text" style={{ fontWeight: 'bold', marginTop: '15px', cursor: 'pointer' }} onClick={handleGoogleSignup}>Signup with Google</p>
+          <p className="signup-text">Already have an account? <Link to="/login">Login</Link></p>
         </div>
       </main>
       <footer className="page-footer">
