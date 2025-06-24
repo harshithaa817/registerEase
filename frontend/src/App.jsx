@@ -4,6 +4,9 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
+import CourseList from './components/courses/CourseList';
+import LectureList from './components/lectures/LectureList';
+import StudentDashboard from './pages/StudentDashboard';
 
 const Callback = () => {
   const location = useLocation();
@@ -35,6 +38,9 @@ const App = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/auth/callback" element={<Callback />} />
+        <Route path="/dashboard/courses" element={<CourseList />} />
+        <Route path="/dashboard/lectures" element={<LectureList />} />
+        <Route path="/dashboard/registrations" element={<StudentDashboard />} />
       </Routes>
     </Router>
   );
