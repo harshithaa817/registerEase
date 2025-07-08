@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import '../styles/dashboard.css'; // New CSS file
+import { Link, useNavigate, Outlet } from 'react-router-dom';
+import '../styles/dashboard.css';
 import { FaBook } from 'react-icons/fa';
 import { FaChalkboardTeacher } from 'react-icons/fa';
 import { FaUserCheck } from 'react-icons/fa';
@@ -13,7 +13,7 @@ const Dashboard = () => {
     <div className="dashboard-container">
       <header className="dashboard-header">
         <img src="RegEaseLogo.png" alt="uni logo" className="header-logo" />
-        <CgProfile className='profile-icon' onClick={() => navigate('/profile')}/>
+        <CgProfile className='profile-icon' onClick={() => navigate('/profile')} />
       </header>
       <div className="dashboard-main">
         <nav className="dashboard-sidenav">
@@ -27,12 +27,12 @@ const Dashboard = () => {
             <FaUserCheck className="sidenav-icon" /> My Registrations
           </Link>
         </nav>
+
         <main className="dashboard-content">
-          <h1 className="dashboard-title">Dashboard</h1>
-          <p className="dashboard-text">Welcome to your dashboard. Select a tab to begin.</p>
-          <button className="dashboard-logout-btn">Logout</button>
+          <Outlet />
         </main>
       </div>
+
       <footer className="dashboard-footer">
         <p className="footer-text">© 2025 University Registration | <a href="/terms" className="footer-link">Terms</a> | <a href="/privacy" className="footer-link">Privacy</a></p>
       </footer>

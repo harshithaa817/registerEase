@@ -4,7 +4,7 @@ import '../index.css';
 
 const Login = () => {
   const handleGoogleLogin = () => {
-    window.location.href = 'http://localhost:5000/auth/google';
+    window.location.href = 'http://localhost:5001/auth/google';
   };
 
   return (

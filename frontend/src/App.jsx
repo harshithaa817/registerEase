@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate, Outlet } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
 import CourseList from './components/courses/CourseList';
+import CourseDetails from './components/courses/CourseDetails';
 import LectureList from './components/lectures/LectureList';
-import StudentDashboard from './pages/StudentDashboard';
+import LectureDetails from './components/lectures/LectureDetails';
+import StudentProfile from './pages/StudentProfile'; // ✅ This is your profile component
 
 const Callback = () => {
   const location = useLocation();
@@ -16,18 +18,24 @@ const Callback = () => {
     const searchParams = new URLSearchParams(location.search);
     const token = searchParams.get('token');
     if (token) {
-      console.log('Token received in callback:', token);
-      // Store token in localStorage or context (e.g., for authenticated requests)
       localStorage.setItem('authToken', token);
       navigate('/dashboard');
     } else {
-      console.error('No token in callback URL');
-      navigate('/login'); // Redirect to login on failure
+      navigate('/login');
     }
   }, [location, navigate]);
 
-  return <div>Loading...</div>; // Placeholder while redirecting
+  return <div>Loading...</div>;
 };
+
+const DashboardLayout = () => (
+  <>
+    <Dashboard />
+    <div className="p-4 flex-grow">
+      <Outlet />
+    </div>
+  </>
+);
 
 const App = () => {
   return (
@@ -36,11 +44,20 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/auth/callback" element={<Callback />} />
-        <Route path="/dashboard/courses" element={<CourseList />} />
-        <Route path="/dashboard/lectures" element={<LectureList />} />
-        <Route path="/dashboard/registrations" element={<StudentDashboard />} />
+        
+        {/* ✅ Add the profile route */}
+        <Route path="/profile" element={<StudentProfile />} />
+
+        {/* Dashboard Nested Routes */}
+        <Route path="/dashboard" element={<DashboardLayout />}>
+          <Route path="courses" element={<CourseList />} />
+          <Route path="courses/:id" element={<CourseDetails />} />
+          <Route path="lectures" element={<LectureList />} />
+          <Route path="lectures/:id" element={<LectureDetails />} />
+          <Route path="profile" element={<StudentProfile />} />
+
+        </Route>
       </Routes>
     </Router>
   );

@@ -1,28 +1,21 @@
 import React from 'react';
-import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
-const CourseCard = ({ course, onRegister }) => {
-  const handleRegister = async () => {
-    try {
-      await axios.post('/api/registrations', { course_id: course.id });
-      onRegister();
-    } catch (err) {
-      alert('Registration failed!');
-      console.error(err);
-    }
-  };
+const CourseCard = ({ course }) => {
+  const navigate = useNavigate();
 
   return (
-    <div className="bg-[#CAE5FF] p-4 rounded-lg shadow-md hover:bg-[#89BBFE] transition">
-      <h3 className="text-xl font-semibold text-[#1D1E2C]">{course.title}</h3>
-      <p className="text-sm text-[#59656F] mt-1">{course.description}</p>
-      <p className="text-sm mt-2 text-[#1D1E2C] font-medium">Semester: {course.semester}</p>
-      <button
-        onClick={handleRegister}
-        className="mt-4 bg-[#1D1E2C] text-white px-4 py-2 rounded hover:bg-[#59656F]"
-      >
-        Register
-      </button>
+    <div 
+      className="bg-white border border-blue-200 rounded-2xl overflow-hidden shadow hover:shadow-lg transition w-full max-w-sm mx-auto cursor-pointer"
+      onClick={() => navigate(`/dashboard/courses/${course.id}`)}
+    >
+      <div className="bg-blue-100 h-36 flex items-center justify-center text-blue-900 text-xl font-bold">
+        {course.title}
+      </div>
+      <div className="p-4">
+       
+       
+      </div>
     </div>
   );
 };
