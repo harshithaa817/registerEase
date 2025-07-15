@@ -47,7 +47,7 @@ const App = () => {
         <Route path="/auth/callback" element={<Callback />} />
         
         {/* ✅ Add the profile route */}
-        <Route path="/profile" element={<StudentProfile />} />
+      
 
         {/* Dashboard Nested Routes */}
         <Route path="/dashboard" element={<DashboardLayout />}>

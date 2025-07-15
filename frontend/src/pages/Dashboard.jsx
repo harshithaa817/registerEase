@@ -1,10 +1,8 @@
 import React from 'react';
 import { Link, useNavigate, Outlet } from 'react-router-dom';
 import '../styles/dashboard.css';
-import { FaBook } from 'react-icons/fa';
-import { FaChalkboardTeacher } from 'react-icons/fa';
-import { FaUserCheck } from 'react-icons/fa';
-import { CgProfile } from "react-icons/cg";
+import { FaBook, FaChalkboardTeacher, FaUserCheck } from 'react-icons/fa';
+import { CgProfile } from 'react-icons/cg';
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -13,7 +11,11 @@ const Dashboard = () => {
     <div className="dashboard-container">
       <header className="dashboard-header">
         <img src="RegEaseLogo.png" alt="uni logo" className="header-logo" />
-        <CgProfile className='profile-icon' onClick={() => navigate('/profile')} />
+        <CgProfile
+          className="profile-icon"
+          onClick={() => navigate('/dashboard/profile')}
+          aria-label="View Profile"
+        />
       </header>
       <div className="dashboard-main">
         <nav className="dashboard-sidenav">
@@ -34,7 +36,16 @@ const Dashboard = () => {
       </div>
 
       <footer className="dashboard-footer">
-        <p className="footer-text">© 2025 University Registration | <a href="/terms" className="footer-link">Terms</a> | <a href="/privacy" className="footer-link">Privacy</a></p>
+        <p className="footer-text">
+          © 2025 University Registration |{' '}
+          <a href="/terms" className="footer-link">
+            Terms
+          </a>{' '}
+          |{' '}
+          <a href="/privacy" className="footer-link">
+            Privacy
+          </a>
+        </p>
       </footer>
     </div>
   );

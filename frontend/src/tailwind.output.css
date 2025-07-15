@@ -1,14 +1,106 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+/*! tailwindcss v4.1.11 | MIT License | https://tailwindcss.com */
+@layer properties;
+.mx-auto {
+  margin-inline: auto;
+}
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.flex {
+  display: flex;
+}
+.grid {
+  display: grid;
+}
+.min-h-screen {
+  min-height: 100vh;
+}
+.w-full {
+  width: 100%;
+}
+.flex-grow {
+  flex-grow: 1;
+}
+.transform {
+  transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+}
+.cursor-not-allowed {
+  cursor: not-allowed;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.items-center {
+  align-items: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.justify-center {
+  justify-content: center;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.rounded-full {
+  border-radius: calc(infinity * 1px);
+}
+.border {
+  border-style: var(--tw-border-style);
+  border-width: 1px;
+}
+.border-t-4 {
+  border-top-style: var(--tw-border-style);
+  border-top-width: 4px;
+}
+.border-\[\#FEEBCB\] {
+  border-color: #FEEBCB;
+}
+.bg-\[\#CAE5FF\] {
+  background-color: #CAE5FF;
+}
+.bg-\[\#FEEBCB\] {
+  background-color: #FEEBCB;
+}
+.bg-gradient-to-r {
+  --tw-gradient-position: to right in oklab;
+  background-image: linear-gradient(var(--tw-gradient-stops));
+}
+.text-\[\#1D1E2C\] {
+  color: #1D1E2C;
+}
+.transition {
+  transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, backdrop-filter, display, visibility, content-visibility, overlay, pointer-events;
+  transition-timing-function: var(--tw-ease, ease);
+  transition-duration: var(--tw-duration, 0s);
+}
+.transition-all {
+  transition-property: all;
+  transition-timing-function: var(--tw-ease, ease);
+  transition-duration: var(--tw-duration, 0s);
+}
+.duration-300 {
+  --tw-duration: 300ms;
+  transition-duration: 300ms;
+}
+.hover\:underline {
+  &:hover {
+    @media (hover: hover) {
+      text-decoration-line: underline;
+    }
+  }
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-/* Global styles */
 body {
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
   background-color: #FFFFFF;
@@ -16,14 +108,11 @@ body {
   line-height: 1.6;
   min-height: 100vh;
 }
-
-/* Page layout */
 .page-container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
-
 .page-header {
   display: flex;
   justify-content: center;
@@ -31,17 +120,14 @@ body {
   background-color: #1D1E2C;
   border-bottom: 1px solid #59656F;
 }
-
 .header-logo {
   width: 50px;
   height: auto;
   transition: transform 0.2s ease;
 }
-
 .header-logo:hover {
   transform: scale(1.1);
 }
-
 .page-content {
   flex: 1;
   display: flex;
@@ -49,33 +135,27 @@ body {
   align-items: center;
   padding: 20px;
 }
-
 .page-footer {
   padding: 15px 30px;
   background-color: #1D1E2C;
   border-top: 1px solid #59656F;
   text-align: center;
 }
-
 .footer-text {
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
   font-size: 0.9rem;
   color: #CAE5FF;
 }
-
 .footer-link {
   color: #89BBFE;
   text-decoration: none;
   margin: 0 10px;
   transition: color 0.2s ease;
 }
-
 .footer-link:hover {
   color: #CAE5FF;
   text-decoration: underline;
 }
-
-/* Home styles */
 .home-container {
   width: 100%;
   max-width: 600px;
@@ -86,24 +166,20 @@ body {
   text-align: center;
   transition: transform 0.2s ease;
 }
-
 .home-container:hover {
   transform: translateY(-2px);
 }
-
 .home-text {
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
   font-size: 1.1rem;
   color: #CAE5FF;
   margin-bottom: 30px;
 }
-
 .home-buttons {
   display: flex;
   justify-content: center;
   gap: 20px;
 }
-
 .home-button {
   font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 1rem;
@@ -117,17 +193,13 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.1s ease;
 }
-
 .home-button:hover {
   background-color: #89BBFE;
   transform: scale(1.05);
 }
-
 .home-button:active {
   transform: scale(0.95);
 }
-
-/* Login styles */
 .login-container {
   width: 100%;
   max-width: 400px;
@@ -139,11 +211,9 @@ body {
   text-align: center;
   transition: transform 0.2s ease;
 }
-
 .login-container:hover {
   transform: translateY(-2px);
 }
-
 .login-title {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
   font-size: 2rem;
@@ -151,20 +221,17 @@ body {
   color: #CAE5FF;
   margin-bottom: 20px;
 }
-
 .login-error {
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
   font-size: 1rem;
   color: #FF4D4F;
   margin-bottom: 15px;
 }
-
 .login-form {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
-
 .login-input {
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
   font-size: 1rem;
@@ -176,12 +243,10 @@ body {
   outline: none;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
-
 .login-input:focus {
   border-color: #89BBFE;
   box-shadow: 0 0 5px rgba(137, 187, 254, 0.3);
 }
-
 .login-submit-btn {
   font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 1rem;
@@ -194,35 +259,28 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.1s ease;
 }
-
 .login-submit-btn:hover {
   background-color: #89BBFE;
   transform: scale(1.05);
 }
-
 .login-submit-btn:active {
   transform: scale(0.95);
 }
-
 .login-text {
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
   font-size: 0.9rem;
   color: #CAE5FF;
   margin-top: 20px;
 }
-
 .login-text a {
   color: #89BBFE;
   text-decoration: none;
   transition: color 0.2s ease;
 }
-
 .login-text a:hover {
   color: #CAE5FF;
   text-decoration: underline;
 }
-
-/* Signup styles */
 .signup-container {
   width: 100%;
   max-width: 400px;
@@ -234,11 +292,9 @@ body {
   text-align: center;
   transition: transform 0.2s ease;
 }
-
 .signup-container:hover {
   transform: translateY(-2px);
 }
-
 .signup-title {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
   font-size: 2rem;
@@ -246,20 +302,17 @@ body {
   color: #CAE5FF;
   margin-bottom: 20px;
 }
-
 .signup-error {
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
   font-size: 1rem;
   color: #FF4D4F;
   margin-bottom: 15px;
 }
-
 .signup-form {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
-
 .signup-input {
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
   font-size: 1rem;
@@ -271,12 +324,10 @@ body {
   outline: none;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
-
 .signup-input:focus {
   border-color: #89BBFE;
   box-shadow: 0 0 5px rgba(137, 187, 254, 0.3);
 }
-
 .signup-submit-btn {
   font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 1rem;
@@ -289,71 +340,99 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.1s ease;
 }
-
 .signup-submit-btn:hover {
   background-color: #89BBFE;
   transform: scale(1.05);
 }
-
 .signup-submit-btn:active {
   transform: scale(0.95);
 }
-
 .signup-text {
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
   font-size: 0.9rem;
   color: #CAE5FF;
   margin-top: 20px;
 }
-
 .signup-text a {
   color: #89BBFE;
   text-decoration: none;
   transition: color 0.2s ease;
 }
-
 .signup-text a:hover {
   color: #CAE5FF;
   text-decoration: underline;
 }
-
-/* Responsive design */
 @media (max-width: 768px) {
   .page-header {
     padding: 10px 20px;
   }
-
   .header-logo {
     width: 40px;
   }
-
   .home-container, .login-container, .signup-container {
     padding: 20px;
     max-width: 90%;
   }
-
   .home-title, .login-title, .signup-title {
     font-size: 1.8rem;
   }
-
   .home-buttons {
     flex-direction: column;
     gap: 10px;
   }
-
   .home-button {
     width: 100%;
     text-align: center;
   }
 }
-
 @media (max-width: 480px) {
   .page-footer {
     padding: 10px 20px;
   }
-
   .footer-text {
     font-size: 0.8rem;
+  }
+}
+@property --tw-rotate-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-rotate-y {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-rotate-z {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-skew-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-skew-y {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-duration {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-rotate-x: initial;
+      --tw-rotate-y: initial;
+      --tw-rotate-z: initial;
+      --tw-skew-x: initial;
+      --tw-skew-y: initial;
+      --tw-border-style: solid;
+      --tw-duration: initial;
+    }
   }
 }
 
